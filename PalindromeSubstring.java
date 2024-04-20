@@ -1,8 +1,10 @@
 package com.stringprograms;
 import java.util.Scanner;
 
-public class PanindromSubstring {
-	static boolean checkPanindrom(String str) {
+//Printing the largest substring palindrom of a given string.
+
+public class PalindromeSubstring {
+	static boolean checkPalindrome(String str) {
 		int i=0 , j = str.length()-1;
 		while(i<j) {
 			if(str.charAt(i) == str.charAt(j)) {
@@ -22,7 +24,8 @@ public class PanindromSubstring {
 				for (int j=i ; j<i+size ; j++) {
 					result += str.charAt(j);
 				}
-				if(checkPanindrom(result)) {
+				if(checkPalindrome(result)) {
+					System.out.println("The largest substring palindrome of the given string is:");
 					System.out.println(result);
 					return;
 				}
@@ -31,6 +34,7 @@ public class PanindromSubstring {
 	}
     public static void main(String[] args) {
     	Scanner scan = new Scanner(System.in);
+	System.out.println("Enter the String:");
     	String str = scan.nextLine();
     	printingSubStrings(str);
     	scan.close();
